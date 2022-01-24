@@ -1,3 +1,8 @@
+Prerequisites 
+1. Installed Java (using v11 for the demo)
+2. Docker for Desktop 
+3. Minikube
+
 Steps to run the application 
 
 1. Created a sample spring boot app with a rest endpoint 
