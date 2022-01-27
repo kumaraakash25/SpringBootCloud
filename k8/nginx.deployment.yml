@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment #Deployment is a wrapper over Replica Set
+metadata:
+  name: my-nginx #Name of the pod
+  labels:
+    app: my-nginx #Useful for identifying attributes
+spec:
+  replicas: 1 #Number of pods to start
+  selector:
+    matchLabels:
+      app: my-nginx # This is how the Deployment finds which Pods to manage
+  template: # This is template for creating pods, essential in case of creating multiple replicas
+    metadata:
+      labels:
+        app: my-nginx
+    spec:
+      containers:
+        - name: my-nginx
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "200m" #200 millicpu (0.2 cpu)
+          livenessProbe: #To check if the application is alive, by means of a heartbeat check
+            httpGet:
+              path: /index.html
+              port: 80
+            initialDelaySeconds: 15
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 1
+          readinessProbe: # To check if the application is ready to serve requests
+            httpGet:
+              path: /index.html
+              port: 80
+            initialDelaySeconds: 15
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 1

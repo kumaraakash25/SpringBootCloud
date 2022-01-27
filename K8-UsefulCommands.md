@@ -15,7 +15,16 @@
 **Kubectl commands** 
 1. kubectl version 
 2. kubectl cluster-info 
-3. kubectl get all
-4. kubectl port-forward [pod] [ports]
-5. kubectl create [resource] - _creates_
-6. kubectl apply [resource] - _creates/ modify_ 
+3. kubectl get all - _gives info about all the deployments_ 
+4. kubectl get pods - _gives info about all the running pods_ 
+5. kubectl describe [pod_name] 
+6. kubectl port-forward [pod] [external_port]:[port_on_pod]
+7. kubectl create [resource] - _creates_
+8. kubectl apply [resource] - _creates/ modify_ 
+9. kubectl run [pod_name] --image=nginx:alpine - _extracts image and deploys on pod_
+10. kubectl delete pod [deployment_name]
+11. kubectl exec [pod_name] -it sh - _to get inside the pod_
+12. kubectl scale deployment [deployment_name] --replicas=5
+13. kubectl get deployments --show-labels - _this would show the deployments together with deployment labels_
+14. kubectl scale -f [deployment_name] --replicas=[replica_count] - _scales the deployment to replica_count_
+15. kubectl delete -f [deployment_name] - _deployment name is the name of the yml file_
