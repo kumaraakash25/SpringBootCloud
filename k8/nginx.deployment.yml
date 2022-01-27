@@ -5,8 +5,8 @@ metadata:
   labels:
     app: my-nginx #Useful for identifying attributes
 spec:
-  replicas: 1 #Number of pods to start
-  selector:
+  replicas: 2 #Number of pods to start
+  selector: # select the pods that will be affected by deployment
     matchLabels:
       app: my-nginx # This is how the Deployment finds which Pods to manage
   template: # This is template for creating pods, essential in case of creating multiple replicas

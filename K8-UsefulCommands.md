@@ -28,3 +28,7 @@
 13. kubectl get deployments --show-labels - _this would show the deployments together with deployment labels_
 14. kubectl scale -f [deployment_name] --replicas=[replica_count] - _scales the deployment to replica_count_
 15. kubectl delete -f [deployment_name] - _deployment name is the name of the yml file_
+16. kubectl get service - _gives the listing for all the services running on the cluster_
+
+Install curl packages
+1. apk add curl
