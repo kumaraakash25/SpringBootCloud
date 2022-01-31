@@ -29,6 +29,12 @@
 14. kubectl scale -f [deployment_name] --replicas=[replica_count] - _scales the deployment to replica_count_
 15. kubectl delete -f [deployment_name] - _deployment name is the name of the yml file_
 16. kubectl get service - _gives the listing for all the services running on the cluster_
+17. kubectl get cm [cm_name] -o yaml - _to get all the config data_ 
+18. kubectl create secret generic db-passwords --from-literal=db-password='password' --from-literal=db-root-password='password'
+19. kubectl get secrets - _to list down all the secrets_
+20. kubectl logs [pod_name] - _to see the logs of the pod_ 
+21. kubectl logs [pod_name] -c [container-name] - _to check logs specific to a container_ 
+22. kubectl logs -f [pod_name]
 
 Install curl packages
 1. apk add curl
