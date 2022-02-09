@@ -35,6 +35,8 @@
 20. kubectl logs [pod_name] - _to see the logs of the pod_ 
 21. kubectl logs [pod_name] -c [container-name] - _to check logs specific to a container_ 
 22. kubectl logs -f [pod_name]
+23. kubectl describe nodes | grep -i address -A 1 - use the IP along with the node port service port 
+24. kubectl get -n [namespace] pods - _useful when multiple containers are deployed in same pod_
 
 Install curl packages
 1. apk add curl
